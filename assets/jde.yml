@@ -1,0 +1,202 @@
+%YAML 1.1
+
+---
+# Additional page configuration
+
+# Additional configurations are loaded using its file name, minus the extension, as an anchor (https://<mydashboad>#<config>). 
+# `config.yml` is still used as a base configuration, and all values here will overwrite it, so you don't have to re-defined everything
+
+title: "JD Edwards"
+
+columns: "4"
+
+tags:
+#Entornos
+  DV: &DV
+    - tag: "DV"
+      tagstyle: "is-success"
+      name: "Desarrollo (DV)"
+  PY: &PY
+    - tag: "PY"
+      tagstyle: "is-warning"
+      name: "Prototipo (PY)"
+  PD: &PD
+    - tag: "PD"
+      tagstyle: "is-danger"
+      name: "Producción (PD)"
+  SM: &SM
+    - tag: "SM"
+      tagstyle: "is-info"
+      name: "Server Manager (Cachés)"
+  ORCH: &ORCH
+    - tag: "DV"
+      tagstyle: "is-success"
+      name: "Orchestrator (DV)"
+
+#Clientes
+  ALB: &ALB
+    - subtitle: "ALB - Grupo Albacora S.A."
+      target: "_blank"
+  ATTINA: &ATTINA
+    - subtitle: "ATTINA - Danokar SL"
+      target: "_blank"
+  BBI: &BBI
+    - subtitle: "BBI - Beretta Benelli Ibérica"
+      target: "_blank"
+  IMQ: &IMQ
+    - subtitle: "IMQ - Igualatorio Médico Quirúrgico"
+      target: "_blank"
+  JUNO: &JUNO
+    - subtitle: "JUNO - Industrias Juno"
+      target: "_blank"
+  MBA: &MBA
+    - subtitle: "MBA - MBA Incorporado"
+      target: "_blank"
+  VS: &VS
+    - subtitle: "VS - Valvospain Industrial"
+      target: "_blank"
+
+
+# First level array represent a group.
+# Leave only a "items" key if not using group 
+services:
+  - name: "Grupo Albacora S.A."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Falbacora.png"
+    items:
+      - <<: *ALB
+        <<: *DV
+        url: "https://srvjde92webdllo.grupoalbacora.es:8021/jde/owhtml/"
+      - <<: *ALB
+        <<: *PY
+        url: "https://srvjde92webdllo.grupoalbacora.es:8026/jde/owhtml/"
+      - <<: *ALB
+        <<: *PD
+        url: "https://srvjde92webprod.grupoalbacora.es/jde/owhtml/"
+      - <<: *ALB
+        <<: *SM
+        url: "http://srvjde92onp.grupoalbacora.es:8999/manage/home"
+      - <<: *ALB
+        <<: *ORCH
+        url: "http://srvjde92webdllo.grupoalbacora.es:8120/studio/"
+
+  - name: "Danokar SL"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Falkar.png"
+    items:
+      - <<: *ATTINA
+        <<: *DV
+        url: "http://jde92dsweb:8021/jde/owhtml/"
+      - <<: *ATTINA
+        <<: *PY
+        url: "http://jde92dsweb:8026/jde/owhtml/"
+      - <<: *ATTINA
+        <<: *PD
+        url: "http://jde92pdweb:8038/jde/owhtml/"
+      - <<: *ATTINA
+        <<: *SM
+        url: "http://jde92deploy:8999/manage/home"
+      - <<: *ATTINA
+        <<: *ORCH
+        url: "http://jde92dsweb:8121/studio/"
+
+  - name: "Beretta Benelli Ibérica"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fberetta.png"
+    items:
+      - <<: *BBI
+        <<: *DV
+        url: "http://bbiweb02.bbi.local:7021/jde/owhtml/"
+      - name: ""
+        <<: *PY
+        url: "/#jde"
+        background: "transparent"
+      - <<: *BBI
+        <<: *PD
+        url: "http://bbiweb01.bbi.local:8038/jde/owhtml/"
+      - <<: *BBI
+        <<: *SM
+        url: "http://bbidep01.bbi.local:8999/manage/home"
+      - <<: *BBI
+        <<: *ORCH
+        url: "http://bbiweb02.bbi.local:7121/studio/"
+
+  - name: "Igualatorio Médico Quirúrgico"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fimq.png"
+    items:
+      - <<: *IMQ
+        <<: *DV
+        url: "http://erpdevweb.imq.dom:8021/jde/owhtml/"
+      - <<: *IMQ
+        <<: *PY
+        url: "http://erpdevweb.imq.dom:8026/jde/owhtml/"
+      - <<: *IMQ
+        <<: *PD
+        url: "http://erpproweb.imq.dom/jde/owhtml/"
+      - <<: *IMQ
+        <<: *SM
+        url: "http://erpprodep.imq.dom:8999/manage/home"
+      - <<: *IMQ
+        <<: *ORCH
+        url: "http://erpdsweb.imq.dom:8121/studio/"
+      - <<: *IMQ
+        name: "Proactiva"
+        url: "http://172.24.64.72/proactivanet/servicedesk/default.paw"
+
+  - name: "Industrias Juno"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fjuno.png"
+    items:
+      - <<: *JUNO
+        <<: *DV
+        url: "http://jde92webd.juno.es:8021/jde/owhtml/"
+      - name: ""
+        <<: *PY
+        url: "/#jde"
+        background: "transparent"
+      - <<: *JUNO
+        <<: *PD
+        url: "http://jde92web.juno.es/jde/owhtml/"
+      - <<: *JUNO
+        <<: *SM
+        url: "http://jde92dep.juno.es:8999/manage/home"
+      - <<: *JUNO
+        <<: *ORCH
+        url: "http://jde92webd.juno.es:8121/studio/"
+
+  - name: "MBA Incorporado"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fmba.png"
+    items:
+      - <<: *MBA
+        <<: *DV
+        url: "https://zarrabeitia-t.mba.eu:8021/jde/owhtml/"
+      - <<: *MBA
+        <<: *PY
+        url: "https://zarrabeitia.mba.eu:8026/jde/owhtml/"
+      - <<: *MBA
+        <<: *PD
+        url: "https://beloki.mba.eu/jde/owhtml/"
+      - <<: *MBA
+        <<: *SM
+        url: "http://etxabe.mba.local:8999/manage/home"
+      - <<: *MBA
+        <<: *ORCH
+        url: "http://zarrabeitia.mba.local:8321/OrchestratorStudio/faces/index.jsf"
+      - <<: *MBA
+        name: "CAU"
+        url: "http://cau.mba.eu"
+
+  - name: "Valvospain Industrial"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fvalvospain.png"
+    items:
+      - <<: *VS
+        <<: *DV
+        url: "http://vsjdeweb01.valvospain.local:8021/jde/owhtml/"
+      - name: ""
+        <<: *PY
+        url: "/#jde"
+        background: "transparent"
+      - <<: *VS
+        <<: *PD
+        url: "http://vsjdeweb01.valvospain.local:8038/jde/owhtml/"
+      - <<: *VS
+        <<: *SM
+        url: "http://vsjdedep01.valvospain.local:8999/manage/home"
+
+

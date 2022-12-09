@@ -1,0 +1,113 @@
+%YAML 1.1
+---
+# Additional page configuration
+
+# Additional configurations are loaded using its file name, minus the extension, as an anchor (https://<mydashboad>#<config>). 
+# `config.yml` is still used as a base configuration, and all values here will overwrite it, so you don't have to re-defined everything
+
+title: "Customer Experience"
+
+columns: "4"
+
+tags:
+#Entornos
+  TEST: &TEST
+    - tag: "TEST"
+      tagstyle: "is-success"
+      name: "OSC (TEST)"
+  PROD: &PROD
+    - tag: "PROD"
+      tagstyle: "is-danger"
+      name: "OSC (PROD)"
+  RESP_TEST: &RESP_TEST
+    - tag: "TEST"
+      tagstyle: "is-success"
+      name: "Responsys (TEST)"
+  RESP_PROD: &RESP_PROD
+    - tag: "PROD"
+      tagstyle: "is-danger"
+      name: "Responsys (PROD)"
+  ELOQUA: &ELOQUA
+    - tag: "ELOQUA"
+      tagstyle: "is-info"
+      name: "Eloqua"
+
+#Clientes
+  CONVERSIA: &CONV
+    - subtitle: "CONVERSIA - Professional Group Conversia S.L.U."
+      target: "_blank"
+  IESA: &IESA
+    - subtitle: "IESA - Informatización de empresas, S.L."
+      target: "_blank"
+  RENFE: &RENFE
+    - subtitle: "RENFE - Renfe Viajeros, S.A."
+      target: "_blank"
+  SALVA: &SALVA
+    - subtitle: "SALVA - Salva Industrial, S.L."
+      target: "_blank"
+  USJ: &USJ
+    - subtitle: "USJ - Fundación Universidad San Jorge"
+      target: "_blank"
+
+# First level array represent a group.
+# Leave only a "items" key if not using group 
+services:
+  - name: "Professional Group Conversia S.L.U."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fconversia.png"
+    items:
+      - <<: *CONV
+        <<: *TEST
+        url: "https://fa-eovr-test-saasfaprod1.fa.ocs.oraclecloud.com"
+      - <<: *CONV
+        <<: *PROD
+        url: "https://fa-eovr-saasfaprod1.fa.ocs.oraclecloud.com/"
+      - <<: *CONV
+        <<: *ELOQUA
+        url: "https://login.eloqua.com/?sitename=CONVERSIA"
+
+  - name: "Informatización de empresas, S.L."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fiesa.png"
+    items:
+      - <<: *IESA
+        <<: *TEST
+        url: "https://fa-esun-test-saasfaprod1.fa.ocs.oraclecloud.com"
+      - <<: *IESA
+        <<: *PROD
+        url: "https://fa-esun-saasfaprod1.fa.ocs.oraclecloud.com"
+      - <<: *IESA
+        <<: *ELOQUA
+        url: "https://login.eloqua.com/?sitename=IESAInformatizaciondeEmpresasSLU"
+
+  - name: "Renfe Viajeros, S.A."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Frenfe.png"
+    items:
+      - <<: *RENFE
+        <<: *TEST
+        url: "https://fa-esar-test-saasfaprod1.fa.ocs.oraclecloud.com"
+      - <<: *RENFE
+        <<: *RESP_TEST
+        url: "https://rj21qsd.responsys.ocs.oraclecloud.com"
+      - <<: *RENFE
+        <<: *RESP_PROD
+        url: "https://ron1qu1.responsys.ocs.oraclecloud.com"
+
+  - name: "Salva Industrial, S.L."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fsalva.png"
+    items:
+      - <<: *SALVA
+        <<: *TEST
+        url: "https://emyr-test.fa.em2.oraclecloud.com"
+      - <<: *SALVA
+        <<: *PROD
+        url: "https://emyr.fa.em2.oraclecloud.com"
+      - <<: *SALVA
+        <<: *ELOQUA
+        url: "https://login.eloqua.com/?sitename=SALVAINDUSTRIALSA"
+
+  - name: "Fundación Universidad San Jorge"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fusj.png"
+    items:
+      - <<: *USJ
+        <<: *ELOQUA
+        url: "https://login.eloqua.com/?sitename=UniversidadSanJorge"
+

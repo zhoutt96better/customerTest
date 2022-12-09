@@ -1,0 +1,441 @@
+%YAML 1.1
+
+---
+# Additional page configuration
+
+# Additional configurations are loaded using its file name, minus the extension, as an anchor (https://<mydashboad>#<config>). 
+# `config.yml` is still used as a base configuration, and all values here will overwrite it, so you don't have to re-defined everything
+
+title: "E-Business Suite"
+
+columns: "4"
+
+tags:
+#Entornos
+  DESA: &DESA
+    - tag: "Desarrollo"
+      tagstyle: "is-success"
+      name: "DESA"
+  PRE: &PRE
+    - tag: "Pre-producción"
+      tagstyle: "is-info"
+      name: "PRE"
+  PROD: &PROD
+    - tag: "Producción"
+      tagstyle: "is-danger"
+      name: "PROD"
+  VPN: &VPN
+    - tag: "VPN"
+      tagstyle: "is-warning"
+      name: "VPN"
+  MIG: &MIG
+    - tag: "Migración"
+      tagstyle: "is-link"
+      name: "MIG"
+  OTRS: &OTRS
+    - tag: "OTRS"
+      tagstyle: "is-primary"
+      name: "OTRS - Jira"
+  DISCOVERER: &DISCOVERER
+    - tag: "Discoverer"
+      tagstyle: "is-warning"
+      name: "DISCOVERER"
+#Clientes
+  ALCAMPO: &ALCAMPO
+    - subtitle: "ALCAMPO - Alcampo S.A."
+      target: "_blank"
+  ANAYA: &ANAYA
+    - subtitle: "ANAYA - Grupo Anaya S.A."
+      target: "_blank"
+  APP: &APP
+    - subtitle: "APP - Autoridad Portuaria de Pasajes (Puerto)"
+      target: "_blank"
+  ARIN: &ARIN
+    - subtitle: "ARIN - Arin Innovation"
+      target: "_blank"
+  BEC: &BEC
+    - subtitle: "BEC - Bilbao Exhibition Center"
+      target: "_blank"
+  CEU: &CEU
+    - subtitle: "CEU - Fundación Universitaria San Pablo"
+      target: "_blank"
+  COAM: &COAM
+    - subtitle: "COAM - Colegio Oficial de Arquitectos de Madrid"
+      target: "_blank"
+  COORA: &COORA
+    - subtitle: "COORA - Cooratiendas"
+      target: "_blank"
+  DEHEUS: &DEHEUS
+    - subtitle: "DEHEUS - De Heus Nutrición Animal S.A.U."
+      target: "_blank"
+  DIGITEX: &DIGITEX
+    - subtitle: "DIGITEX - Digitex Informática S.L."
+  EITB: &EITB
+    - subtitle: "EITB - Euskal Irrati Telebista"
+      target: "_blank"
+  ESBI: &ESBI
+    - subtitle: "ESBI - ESBI Bizkaia Energia"
+      target: "_blank"
+  EVOLUTIO: &EVOLUTIO
+    - subtitle: "EVOLUTIO - Evolutio Cloud Enabler S.A."
+      target: "_blank"
+  FYCMA: &FYC
+    - subtitle: "FYCMA - Palacio de Ferias y Congresos de Málaga"
+      target: "_blank"
+  GAIKER: &GAIKER
+    - subtitle: "GAIKER - Fundación Gaiker"
+      target: "_blank"
+  HM: &HM
+    - subtitle: "HM - Havas Media"
+      target: "_blank"
+  HBS: &HBS
+    - subtitle: "HBS - Hydro Building Systems España S.L.U."
+      target: "_blank"
+  IRU: &IRU
+    - subtitle: "IRU - Frutas IRU S.A."
+      target: "_blank"
+  MARINA: &MARINA
+    - subtitle: "MARINA - Marina Salud S.A."
+      target: "_blank"
+  MASAVEU: &MASAVEU
+    - subtitle: "MASAVEU - Corporación Masaveu S.A."
+      target: "_blank"
+  MASTERD: &MASTERD
+    - subtitle: "MASTERD - Master Distancia S.A."
+      target: "_blank"
+  MEGASA: &MEGASA
+    - subtitle: "MEGASA - MEGASAASA Metalúrgica Galaica S.A."
+      target: "_blank"
+  PIÑERO: &PIÑERO
+    - subtitle: "PIÑERO - Grupo Piñero"
+      target: "_blank"
+  PLUSPETROL: &PLUSPETROL
+    - subtitle: "PLUSPETROL - Pluspetrol S.A."
+      target: "_blank"
+  ROYAL: &ROYAL
+    - subtitle: "ROYAL - Royal SAT N 8697"
+      target: "_blank"
+  SAMSIC: &SAMSIC
+    - subtitle: "SAMSIC - Samsic Iberia S.L."
+      target: "_blank"
+  TAMOIN: &TAMOIN
+    - subtitle: "TAMOIN - Tamoin S.L.U."
+      target: "_blank"
+  TCBUEN: &TCBUEN
+    - subtitle: "TCBUEN - Terminal de Contenedores de Buenaventura"
+      target: "_blank"
+
+# First level array rep - Jiraresent a group.
+# Leave only a "items" key if not using group 
+services:
+  - name: "Alcampo S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Falcampo.png"
+    items:
+      - <<: *ALCAMPO
+        <<: *DESA
+        url: "http://ebstest.alcampo.es:8000"
+      - <<: *ALCAMPO
+        <<: *PROD
+        url: "http://ebsprod.alcampo.es:8000"
+
+  - name: "Grupo Anaya S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fanaya.png"
+    items:
+      - <<: *ANAYA
+        <<: *MIG
+        name: "Fase 1"
+        url: "http://pruebas-oracle.anaya.es:8000"
+      - <<: *ANAYA
+        <<: *MIG
+        name: "Fase 2"
+        url: "http://desarrollo.anaya.es:8010"
+
+  - name: "Autoridad Portuaria de Pasajes"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fapp.png"
+    items:
+      - <<: *APP
+        <<: *DESA
+        url: "http://zumaia.loghost:8010/"
+      - <<: *APP
+        <<: *PROD
+        url: "http://zumaia.loghost:8000/"
+      - <<: *APP
+        <<: *VPN
+        url: "https://194.30.117.253/Login/Login"
+
+  - name: "Bilbao Exhibition Center"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fbec.png"
+    items:
+      - <<: *BEC
+        <<: *DESA
+        url: "https://desa12.bec.eu/OA_HTML/AppsLocalLogin.jsp"
+      - <<: *BEC
+        <<: *PROD
+        url: "https://net12.bec.eu/OA_HTML/AppsLocalLogin.jsp"
+
+  - name: "Fundación Universitaria San Pablo "
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fceu.png"
+    items:
+      - <<: *CEU
+        <<: *DESA
+        url: "http://oracleapp02.ceu.es:8000"
+      - <<: *CEU
+        <<: *PROD
+        url: "http://oracleapp01.ceu.es:8000/"
+     # - <<: *CEU
+      #  <<: *MIG
+      # name: "Fase 1"
+      # url: "http://"
+
+  - name: "Colegio Oficial de Arquitectos de Madrid"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fcoam.png"
+    items:
+      - <<: *COAM
+        <<: *DESA
+        url: "http://contabilidad-test.coam.org:8000/"
+      - <<: *COAM
+        <<: *PROD
+        url: "http://contabilidad.coam.org:8000/"
+
+  - name: "Cooratiendas"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fcoora.png"
+    items:
+      - <<: *COORA
+        <<: *DESA
+        url: "http://cooradev.cooratiendas.com.co:8000/"
+      - <<: *COORA
+        <<: *PROD
+        url: "http://cooratiendascedi.cooratiendas.com.co:8000/"
+
+  - name: "De Heus Nutrición Animal S.A.U"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fdeheus.png"
+    items:
+      - <<: *DEHEUS
+        <<: *DESA
+        url: "http://f1app.saprogal.cag:8000/"
+      - <<: *DEHEUS
+        <<: *PROD
+        url: "http://eslcoraapp.saprogal.cag:8000/"
+
+  - name: "Digitex Informática S.L"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fdigitex.png"
+    items:
+      - <<: *DIGITEX
+        <<: *DESA
+        url: "https://esoramad201.grupodigitex.com:4443/"
+      - <<: *DIGITEX
+        <<: *PROD
+        url: "https://oracleebs.grupodigitex.com:4443/"
+      - <<: *DIGITEX
+        <<: *DISCOVERER
+        url: "https://esoramad202.grupodigitex.com:9002/discoverer/viewer?"
+      - <<: *DIGITEX
+        <<: *MIG
+        name: "Fase 1"
+        url: "https://oracleebsmig.grupodigitex.com:4443/"
+ 
+  - name: "Euskal Irrati Telebista"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Feitb.png"
+    items:
+      - <<: *EITB
+        <<: *VPN
+        url: "https://sarri.eitb.eus/vpn/index.html"
+
+  - name: "ESBI Bizkaia Energia"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fesbi.png"
+    items:
+      - <<: *ESBI
+        <<: *DESA
+        url: "http://amorlx10.bizkaiaenergia.local:8010/"
+      - <<: *ESBI
+        <<: *PROD
+        url: "http://amorlx10.bizkaiaenergia.local:8000/"
+
+  - name: "Evolutio Cloud Enabler S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fevolutio.png"
+    items:
+      - <<: *EVOLUTIO
+        <<: *DESA
+        url: "https://pruebas.grn.evolutio.es"
+      - <<: *EVOLUTIO 
+        <<: *PRE
+        url: "https://desarrollo.grn.evolutio.es"
+      - <<: *EVOLUTIO
+        <<: *PROD
+        url: "https://produccion.grn.evolutio.es"
+      - <<: *EVOLUTIO
+        <<: *VPN
+        url: "https://passevolutio.cloud.com/Citrix/StoreWeb/"
+
+  - name: "Palacio de Ferias y Congresos de Málaga"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Ffycma.png"
+    items:
+      - <<: *FYC
+        <<: *DESA
+        url: "http://vsrvebsaptest.palacio.promalaga.es:8000/"
+      - <<: *FYC
+        <<: *PRE
+        url: "http://vsrvebsapprep.palacio.promalaga.es:8000/"
+      - <<: *FYC
+        <<: *PROD
+        url: "http://vsrvebsapprod.palacio.promalaga.es:8000/"
+
+  - name: "Fundación Gaiker"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fgaiker.png"
+    items:
+      - <<: *GAIKER
+        <<: *DESA
+        url: "http://oebsdes.gaiker.es:8000/"
+      - <<: *GAIKER
+        <<: *PRE
+        url: "http://oebspre.gaiker.es:8000/"
+      - <<: *GAIKER
+        <<: *PROD
+        url: "http://erp.gaiker.es:8000/"
+      - <<: *GAIKER
+        <<: *VPN
+        url: "https://vdi.gaiker.es/"
+
+  - name: "Havas Media"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fhavas.png"
+    items:
+      - <<: *HM
+        <<: *DESA
+        url: "http://ebsdev19c.havasmedia.com:8000/"
+      - <<: *HM
+        <<: *PROD
+        url: "http://ebsprdsrv12.havasmedia.com:8000/"
+      - <<: *HM
+        <<: *OTRS
+        url: "https://jira.havas.com/"  
+
+  - name: "Hydro Building Systems España S.L.U"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fhbs.png"
+    items:
+      - <<: *HBS
+        <<: *DESA
+        url: "http://vtoap20ebsdapp.global.to:10015/"
+      - <<: *HBS
+        <<: *PROD
+        url: "http://vtoap10ebsp.global.to:10015/"
+
+  - name: "Frutas IRU S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Firu.png"
+    items:
+      - <<: *IRU
+        <<: *DESA
+        url: "http://new12apptest.firu.com:8000/"
+      - <<: *IRU
+        <<: *PROD
+        url: "http://ebs12app.firu.com:8000/"
+ 
+  - name: "Marina Salud S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fmarina.png"
+    items:
+      - <<: *MARINA
+        <<: *DESA
+        url: "http://nperap61.marinasalud.es:8010/"
+      - <<: *MARINA
+        <<: *PROD
+        url: "http://prerap61.marinasalud.es:8010/"
+
+  - name: "Corporación Masaveu S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fmasaveu.png"
+    items:
+      - <<: *MASAVEU
+        <<: *DESA
+        url: "http://cpdsrvowl001.masaveu.net:8000"
+      - <<: *MASAVEU
+        <<: *PROD
+        url: "http://cpdsrvowl002.masaveu.net:8000/"
+
+  - name: "Master Distancia S.A"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fmasterd.png"
+    items:
+      - <<: *MASTERD
+        <<: *DESA
+        url: "http://desaapp.masterd.es:8000"
+      - <<: *MASTERD
+        <<: *PROD
+        url: "http://erpsp.masterd.es/"
+
+  - name: "Metalúrgica Galaica S.A."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fmegasa.png"
+    items:
+      - <<: *MEGASA
+        <<: *DESA
+        url: "http://mcappebsdes.grupomegasa.com:8000"
+      - <<: *MEGASA
+        <<: *PROD
+        url: "http://mcappebs.grupomegasa.com:8000"
+
+  - name: "Grupo Piñero"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fpiñero.png"
+    items:
+      - <<: *PIÑERO
+        <<: *DESA
+        url: "http://fintest.cen.intranet:8000/"
+      - <<: *PIÑERO
+        <<: *PROD
+        url: "http://fin.cen.intranet:8000/"
+      - <<: *PIÑERO
+        <<: *OTRS
+        url: "https://jira.grupo-pinero.com/login.jsp"
+      - <<: *PIÑERO
+        <<: *VPN
+        url: "https://195.57.129.2/global-protect/login.esp"
+
+  - name: "Pluspetrol S.A."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fpluspetrol.png"
+    items:
+      - <<: *PLUSPETROL
+        <<: *DESA
+        url: "http://pptestap12.ppecu.pri:8025/"
+      - <<: *PLUSPETROL
+        <<: *PROD
+        url: "http://aoespap12.ppecu.pri:8007/"
+
+  - name: "Royal SAT N 8697"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Froyal.png"
+    items:
+      - <<: *ROYAL
+        <<: *DESA
+        url: "http://mordor2.satroyal.es:8002/"
+      - <<: *ROYAL
+        <<: *PROD
+        url: "http://oraapp.satroyal.es:8000/"
+
+  - name: "Samsic Iberia S.L"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fsamsic.png"
+    items:
+      - <<: *SAMSIC
+        <<: *DESA
+        url: "http://ebsdesa.samsic.int:8006/"
+      - <<: *SAMSIC
+        <<: *PROD
+        url: "http://doris.samsic.int:8006/"
+
+  - name: "Tamoin S.L.U"  
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Ftamoin.png"
+    items:
+      - <<: *TAMOIN
+        <<: *DESA
+        url: "http://linappdesupg.grupotamoin.local:8000/"
+      - <<: *TAMOIN
+        <<: *PRE
+        url: "http://linapppreupg.grupotamoin.local:8000/"
+      - <<: *TAMOIN
+        <<: *PROD
+        url: "http://ebsoci.grupotamoin.com:8000/"
+
+  - name: "TCBUEN  Terminal de Contenedores de Buenaventura"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Ftcbuen.png"
+    items:
+      - <<: *TCBUEN
+        <<: *DESA
+        url: "http://apphidra.tcbuen.co:8015/"
+      - <<: *TCBUEN
+        <<: *PROD
+        url: "http://appcronos.tcbuen.co:8000/"
+
+

@@ -1,0 +1,121 @@
+%YAML 1.1
+
+---
+# Additional page configuration
+
+# Additional configurations are loaded using its file name, minus the extension, as an anchor (https://<mydashboad>#<config>). 
+# `config.yml` is still used as a base configuration, and all values here will overwrite it, so you don't have to re-defined everything
+
+title: "ERP Cloud"
+
+columns: "4"
+
+tags:
+#Entornos
+  TEST: &TEST
+    - tag: "TEST"
+      tagstyle: "is-success"
+      name: "TEST"
+  PROD: &PROD
+    - tag: "PROD"
+      tagstyle: "is-danger"
+      name: "PROD"
+
+#Clientes
+  AMA: &AMA
+    - subtitle: "AMA - AMA Vida Seguros y Reaseguros S.A."
+      target: "_blank"
+  APP: &APP
+    - subtitle: "APP - Autoridad Portuaria de Pasajes"
+      target: "_blank"
+  COAM: &COAM
+    - subtitle: "COAM - Colegio Oficial de Arquitectos de Madrid S.L.U."
+      target: "_blank"
+  IESE: &IESE
+    - subtitle: "IESE - Business School University of Navarra"
+      target: "_blank"
+  PINERO: &PINERO
+    - subtitle: "PIÑERO - Grupo Piñero"
+      target: "_blank"
+  UE: &UE
+    - subtitle: "UE - Universidad Europea de Madrid S.L.U."
+      target: "_blank"
+  UNAV: &UNAV
+    - subtitle: "UNAV - Universidad de Navarra"
+      target: "_blank"
+
+# First level array represent a group.
+# Leave only a "items" key if not using group 
+services:
+  - name: "AMA Vida Seguros y Reaseguros S.A."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fama.png"
+    items:
+      - <<: *AMA
+        <<: *TEST
+        url: "https://efdi-test.fa.em3.oraclecloud.com/"
+      - <<: *AMA
+        <<: *PROD
+        url: "https://efdi.fa.em3.oraclecloud.com/"
+
+  - name: "Autoridad Portuaria de Pasajes"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fapp.png"
+    items:
+      - <<: *APP
+        <<: *TEST
+        url: "https://fa-evoh-test-saasfaprod1.fa.ocs.oraclecloud.com/"
+      - <<: *APP
+        <<: *PROD
+        url: "https://fa-evoh-saasfaprod1.fa.ocs.oraclecloud.com/"
+
+  - name: "Colegio Oficial de Arquitectos de Madrid S.L.U."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fcoam.png"
+    items:
+      - <<: *COAM
+        <<: *TEST
+        url: "https://ehfh-test.fa.em2.oraclecloud.com/"
+      - <<: *COAM
+        <<: *PROD
+        url: "https://ehfh.fa.em2.oraclecloud.com/"
+
+  - name: "Business School University of Navarra"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fiese.png"
+    items:
+      - <<: *IESE
+        <<: *TEST
+        url: "https://ecpo-test.fa.em2.oraclecloud.com/"
+      - <<: *IESE
+        <<: *PROD
+        url: "https://ecpo.fa.em2.oraclecloud.com/"
+
+  - name: "Grupo Piñero"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Fpiñero.png"
+    items:
+      - <<: *PINERO
+        <<: *TEST
+        url: "https://eigz-test.fa.em2.oraclecloud.com/"
+      - <<: *PINERO
+        <<: *PROD
+        url: "https://eigz.fa.em2.oraclecloud.com/"
+
+  - name: "Universidad Europea de Madrid S.L.U."
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Falcampo.png"
+    items:
+      - <<: *UE
+        <<: *TEST
+        url: "https://emer-test.fa.em3.oraclecloud.com/"
+      - <<: *UE
+        <<: *PROD
+        url: "https://emer.fa.em3.oraclecloud.com/"
+
+  - name: "Universidad de Navarra"
+    logo: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/ax0ecu9fxbma/b/homer-files/o/logos_png%2Funav.png"
+    items:
+      - <<: *UNAV
+        <<: *TEST
+        url: "https://elil-test.fa.em2.oraclecloud.com/"
+      - <<: *UNAV
+        <<: *PROD
+        url: "https://elil.fa.em2.oraclecloud.com/"
+      - <<: *UNAV
+        name: "Jira"
+        url: "https://unav.atlassian.net"

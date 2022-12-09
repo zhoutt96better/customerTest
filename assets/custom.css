@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* Custom card colors */
+/* Use with `class:` property of services in config.yml */
+body .media.no-subtitle {
+    flex-direction: column;
+    align-items: center;
+}
+
+.media.no-subtitle .media-left .image.is-48x48 {
+    width: auto;
+}
+

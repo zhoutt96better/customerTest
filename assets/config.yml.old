@@ -1,0 +1,234 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "JD Edwards Dashboard"
+subtitle: "Arin Innovation"
+logo: "assets/icons/arin_blanco.png"
+
+header: false
+footer: false
+
+columns: "4"
+# Optional theme customization
+theme: default
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#ffffff"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link-hover: "#363636"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link-hover: "#ffdd57"
+
+links:
+  - name: "OTRS"
+    url: "http://otrs.arin.local/otrs/index.pl"
+    target: "_blank" # optional html tag target attribute
+  - name: "sysPass"
+    url: "http://syspass.arin.local/syspass/"
+    target: "_blank" # optional html tag target attribute
+  - name: "ariNet"
+    url: "http://arinet.arin.local:8010/ariNet_v2/"
+    target: "_blank" # optional html tag target attribute
+  - name: "Guacamole"
+    url: "https://guacamole.arin.local"
+    target: "_blank" # optional html tag target attribute
+  - name: "arInOut"
+    url: "http://intranet.arin.local/ords/f?p=arinout"
+    target: "_blank" # optional html tag target attribute
+  - name: "aRHin"
+    url: "http://intranet.arin.local/ords/f?p=vacaciones"
+    target: "_blank" # optional html tag target attribute
+  - name: "arinPage"
+    url: "http://intranet.arin.local/ords19/f?p=ARINPAGE"
+    target: "_blank" # optional html tag target attribute
+  - name: "GitLab"
+    url: "http://gitlab.arin.local"
+    target: "_blank" # optional html tag target attribute
+  - name: "Metalink"
+    url: "https://support.oracle.com/epmos/faces/Dashboard"
+    target: "_blank" # optional html tag target attribute
+
+tags: 
+  DV: &DV
+    - tag: "DV"
+      tagstyle: "is-success"
+      name: "Desarrollo (DV)"
+  PY: &PY
+    - tag: "PY"
+      tagstyle: "is-warning"
+      name: "Prototipo (PY)"
+  PD: &PD
+    - tag: "PD"
+      tagstyle: "is-danger"  
+      name: "Producción (PD)"
+  SM: &SM
+    - tag: "SM"
+      tagstyle: "is-info"
+      name: "Server Manager (Cachés)"
+  ALB: &ALB
+    - subtitle: "ALB - Grupo Albacora S.A."
+      target: "_blank"
+  ATTINA: &ATTINA
+    - subtitle: "ATTINA - Danokar SL"
+      target: "_blank"
+  BBI: &BBI
+    - subtitle: "BBI - Beretta Benelli Ibérica"
+      target: "_blank"
+  IMQ: &IMQ
+    - subtitle: "IMQ - Igualatorio Médico Quirúrgico"
+      target: "_blank"
+  JUNO: &JUNO
+    - subtitle: "JUNO - Industrias Juno"
+      target: "_blank"
+  MBA: &MBA
+    - subtitle: "MBA - MBA Incorporado"
+      target: "_blank"
+  VS: &VS
+    - subtitle: "VS - Valvospain Industrial"
+      target: "_blank"
+
+
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Grupo Albacora S.A."
+    logo: "assets/tools/albacora.png"
+    items:
+      - <<: *ALB
+        <<: *DV
+        url: "https://srvjde92webdllo.grupoalbacora.es:8021/jde/owhtml/"
+      - <<: *ALB
+        <<: *PY
+        url: "https://srvjde92webdllo.grupoalbacora.es:8026/jde/owhtml/"
+      - <<: *ALB
+        <<: *PD
+        url: "https://srvjde92webprod.grupoalbacora.es/jde/owhtml/"
+      - <<: *ALB
+        <<: *SM
+        url: "http://srvjde92onp.grupoalbacora.es:8999/manage/home"
+
+  - name: "Danokar SL"
+    logo: "assets/tools/alkar.png"
+    items:
+      - <<: *ATTINA
+        <<: *DV
+        url: "http://jde92dsweb:8021/jde/owhtml/"
+      - <<: *ATTINA
+        <<: *PY
+        url: "http://jde92dsweb:8026/jde/owhtml/"
+      - <<: *ATTINA
+        <<: *PD
+        url: "http://jde92pdweb:8038/jde/owhtml/"
+      - <<: *ATTINA
+        <<: *SM
+        url: "http://jde92deploy:8999/manage/home"
+
+  - name: "Beretta Benelli Ibérica"
+    logo: "assets/tools/beretta.png"
+    items:
+      - <<: *BBI
+        <<: *DV
+        url: "http://bbiweb02.bbi.local:7021/jde/owhtml/"
+      - name: ""
+        url: "#"
+        tag: "PY"
+        tagstyle: "is-warning disabled"
+        background: "transparent"
+      - <<: *BBI
+        <<: *PD
+        url: "http://bbiweb01.bbi.local:8038/jde/owhtml/"
+      - <<: *BBI
+        <<: *SM
+        url: "http://bbidep01.bbi.local:8999/manage/home"
+
+  - name: "Igualatorio Médico Quirúrgico"
+    logo: "assets/tools/imq.png"
+    items:
+      - <<: *IMQ
+        <<: *DV
+        url: "http://erpdsweb.imq.dom:8021/jde/owhtml/"
+      - <<: *IMQ
+        <<: *PY
+        url: "http://erpdevweb.imq.dom:8026/jde/owhtml/"
+      - <<: *IMQ
+        <<: *PD
+        url: "http://erpproweb.imq.dom/jde/owhtml/"
+      - <<: *IMQ
+        <<: *SM
+        url: "http://erpprodep.imq.dom:8999/manage/home"
+      - <<: *IMQ
+        name: "Proactiva"
+        url: "http://172.24.64.72/proactivanet/servicedesk/default.paw"
+
+  - name: "Industrias Juno"
+    logo: "assets/tools/juno.png"
+    items:
+      - <<: *JUNO
+        <<: *DV
+        url: "http://jde92webd.juno.es:8021/jde/owhtml/"
+      - name: ""
+        <<: *PY
+        url: "#"
+        background: "transparent"
+      - <<: *JUNO
+        <<: *PD
+        url: "http://jde92web.juno.es/jde/owhtml/"
+      - <<: *JUNO
+        <<: *SM
+        url: "http://jde92dep.juno.es:8999/manage/home"
+
+  - name: "MBA Incorporado"
+    logo: "assets/tools/mba.png"
+    items:
+      - <<: *MBA
+        <<: *DV
+        url: "https://zarrabeitia.mba.eu:8021/jde/owhtml/"
+      - <<: *MBA
+        <<: *PY
+        url: "https://zarrabeitia.mba.eu:8026/jde/owhtml/"
+      - <<: *MBA
+        <<: *PD
+        url: "https://beloki.mba.eu/jde/owhtml/"
+      - <<: *MBA
+        <<: *SM
+        url: "http://etxabe.mba.local:8999/manage/home"
+      - <<: *MBA
+        name: "CAU"
+        url: "http://cau.mba.eu"
+
+  - name: "Valvospain Industrial"
+    logo: "assets/tools/valvospain.png"
+    items:
+      - <<: *VS
+        <<: *DV
+        url: "http://vsjdeweb01.valvospain.local:8021/jde/owhtml/"
+      - name: ""
+        <<: *PY
+        url: "#"
+        background: "transparent"
+      - <<: *VS
+        <<: *PD
+        url: "http://vsjdeweb01.valvospain.local:8038/jde/owhtml/"
+      - <<: *VS
+        <<: *SM
+        url: "http://vsjdedep01.valvospain.local:8999/manage/home"
+

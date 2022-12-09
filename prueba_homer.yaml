@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homer
+  labels:
+    app: homer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homer
+  template:
+    metadata:
+      labels:
+        app: homer
+    spec:    
+      volumes:
+        - name: assets
+          configMap:
+            name: config-files
+        
+        - name: icons
+          configMap:
+            name: icons-homer
+            
+        - name: tools
+          configMap:
+            name: tools-homer
+            
+      containers:
+        - name: homer
+          image:  b4bz/homer:v22.11.1
+          ports:
+          - containerPort: 8080
+          volumeMounts:
+          - name: assets
+            mountPath: "/www/assets"
+            readOnly: true
+            
+                
+---
+#fjg
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: homer
+  name: homer-svc
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-internal: "true"
+    service.beta.kubernetes.io/oci-load-balancer-subnet1: "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaa6hy2orsocqd42thmgc2yjq2o2g6i5q5xfsakstf65mm66gw5p43q"
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+  selector:
+    app: homer
+    
