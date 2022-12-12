@@ -1,0 +1,12 @@
+version: 0.1
+component: build
+steps:
+ - type: Command
+   name: "prueba"
+   command: |
+     echo "Esto es una prueba"
+
+outputArtifacts:
+  - name: prueba_homer.yaml
+    type: BINARY
+    location: root
