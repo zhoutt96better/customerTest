@@ -3,6 +3,17 @@ component: build
 timeoutInSeconds: 1000
 shell: bash           
 
+inputArtifacts:
+  - name: main.py
+    type: GENERIC_ARTIFACT
+    artifactId: cc84e390fb79af86168a4aae7986a0a294a21286470b48fe25080a02b6e9b50f
+    registryId: ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryayaj5k4mwtnem44btpxbk5ytfcohdldxnrcb7yehjmhbxnq
+    path: main
+    version: 0.1
+    location: main.py
+
+
+
 steps:
   - type: Command
     name: "Prueba"
