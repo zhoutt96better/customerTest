@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # This is an automatically generated code sample.
 # To make this code sample work in your Oracle Cloud tenancy,
 # please replace the values for any parameters whose current values do not fit
