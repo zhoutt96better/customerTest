@@ -18,5 +18,5 @@ steps:
   - type: Command
     name: "Prueba"
     command: |
-      python --version
+      #python --version
       python main.py
