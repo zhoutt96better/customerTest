@@ -18,5 +18,6 @@ steps:
   - type: Command
     name: "Prueba"
     command: |
-      #python --version
-      python main.py
+      echo "la version de python es:"
+      python --version
+      
