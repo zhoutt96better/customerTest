@@ -23,9 +23,5 @@ steps:
       
 outputArtifacts:
   - name: valvospain
-    type: GENERIC_ARTIFACT
-    artifactId: ocid1.genericartifact.oc1.eu-frankfurt-1.0.amaaaaaagmaryaya235dpgjkaeoo6sg3ljplbmtc2owujyrq3hc4fybdpuaq
-    registryId: ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryayaejvynk3tmwdgw6m3ft5prq7r4tsnpyal7bnxdmbkhc5a
-    path: valvospain
-    version: 0.2
+    type: BINARY
     location: valvospain.png
