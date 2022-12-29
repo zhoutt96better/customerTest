@@ -34,6 +34,6 @@ steps:
       echo $IMAGEN_EDITADA
       
 outputArtifacts:
-  - name: $imagen_editada
+  - name: prueba
     type: BINARY
-    location: todos_logos/$imagen_editada.png
+    location: todos_logos/prueba.png
