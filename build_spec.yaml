@@ -17,6 +17,9 @@ steps:
     command: |
       echo "la version de python es:"
       python --version
+      IMAGEN_EDITADA='arin'
+      echo $IMAGEN_EDITADA
+      echo ${OCI_TRIGGER_EVENT_TYPE}
       
 outputArtifacts:
   - name: IMAGEN_EDITADA
