@@ -3,6 +3,9 @@ component: build
 timeoutInSeconds: 1000
 shell: bash           
 
+exportedVariables:
+  - IMAGEN_EDITADA
+    
 steps:
   - type: Command
     name: "Prueba"
