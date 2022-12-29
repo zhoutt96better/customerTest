@@ -24,4 +24,4 @@ steps:
 outputArtifacts:
   - name: valvospain
     type: BINARY
-    location: /todos_logos/valvospain.png
+    location: todos_logos/valvospain.png
