@@ -22,6 +22,6 @@ steps:
       echo ${OCI_TRIGGER_EVENT_TYPE}
       
 outputArtifacts:
-  - name: IMAGEN_EDITADA
+  - name: $IMAGEN_EDITADA
     type: BINARY
-    location: todos_logos/IMAGEN_EDITADA.png
+    location: todos_logos/$IMAGEN_EDITADA.png
