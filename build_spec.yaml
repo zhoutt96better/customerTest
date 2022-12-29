@@ -3,6 +3,33 @@ component: build
 timeoutInSeconds: 1000
 shell: bash           
 
+env:
+  # these are local variables to the build config
+  variables:
+    imagen_editada: "arin"
+
+  # the value of a vaultVariable is the secret-id (in OCI ID format) stored in the OCI Vault service
+  # you can then access the value of that secret in your build_spec.yaml commands
+  vaultVariables:
+    
+  # exportedVariables are made available to use as parameters in sucessor Build Pipeline stages
+  # For this Build to run, the Build Pipeline needs to have a BUILDRUN_HASH parameter set
+  exportedVariables:
+    - IMAGEN_EDITADA
+
+# Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
+# More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
+
+inputArtifacts: 
+
+steps:
+  - type: Command
+    name: "Init exportedVariables"
+    timeoutInSeconds: 30
+    command: |
+      IMAGEN_EDITADA=$imagen_editada
+      echo "la variable imagen_editada tiene el valor:"
+      echo $IMAGEN_EDITADA
     
 steps:
   - type: Command
@@ -10,6 +37,7 @@ steps:
     command: |
       echo "la version de python es:"
       python --version
+      echo "el trigger event"
       echo ${OCI_TRIGGER_EVENT_TYPE}
       
 outputArtifacts:
