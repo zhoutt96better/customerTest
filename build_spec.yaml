@@ -3,8 +3,13 @@ component: build
 timeoutInSeconds: 1000
 shell: bash           
 
-exportedVariables:
-  - IMAGEN_EDITADA
+env:
+  # exportedVariables are made available to use as parameters in sucessor Build Pipeline stages
+  # We want to transfer over the vault values in this case, so create a variable to hold them
+  # and we will copy them over
+  exportedVariables:
+    - IMAGEN_EDITADA
+
     
 steps:
   - type: Command
