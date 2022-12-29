@@ -20,16 +20,6 @@ env:
 # Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
 # More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
 
-inputArtifacts: 
-
-steps:
-  - type: Command
-    name: "Init exportedVariables"
-    timeoutInSeconds: 30
-    command: |
-      IMAGEN_EDITADA=$imagen_editada
-      echo "la variable imagen_editada tiene el valor:"
-      echo $IMAGEN_EDITADA
     
 steps:
   - type: Command
@@ -39,6 +29,13 @@ steps:
       python --version
       echo "el trigger event"
       echo ${OCI_TRIGGER_EVENT_TYPE}
+      
+  - type: Command
+    name: "Init exportedVariables"
+    command: |
+      IMAGEN_EDITADA=$imagen_editada
+      echo "la variable imagen_editada tiene el valor:"
+      echo $IMAGEN_EDITADA
       
 outputArtifacts:
   - name: imagen_editada
