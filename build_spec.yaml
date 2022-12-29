@@ -3,13 +3,6 @@ component: build
 timeoutInSeconds: 1000
 shell: bash           
 
-env:
-  # exportedVariables are made available to use as parameters in sucessor Build Pipeline stages
-  # We want to transfer over the vault values in this case, so create a variable to hold them
-  # and we will copy them over
-  exportedVariables:
-    - IMAGEN_EDITADA
-
     
 steps:
   - type: Command
@@ -17,11 +10,9 @@ steps:
     command: |
       echo "la version de python es:"
       python --version
-      IMAGEN_EDITADA='arin'
-      echo $IMAGEN_EDITADA
       echo ${OCI_TRIGGER_EVENT_TYPE}
       
 outputArtifacts:
-  - name: $IMAGEN_EDITADA
+  - name: imagen_editada
     type: BINARY
-    location: todos_logos/$IMAGEN_EDITADA.png
+    location: todos_logos/prueba.png
