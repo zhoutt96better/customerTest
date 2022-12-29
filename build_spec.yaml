@@ -3,17 +3,6 @@ component: build
 timeoutInSeconds: 1000
 shell: bash           
 
-inputArtifacts:
-  - name: main_py
-    type: GENERIC_ARTIFACT
-    artifactId: ocid1.genericartifact.oc1.eu-frankfurt-1.0.amaaaaaagmaryayazxuzdx7glirqs47lumweiij63vzjuxzumrtg5lejjldq
-    registryId: ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryayaj5k4mwtnem44btpxbk5ytfcohdldxnrcb7yehjmhbxnq
-    path: main
-    version: 0.1
-    location: main.py
-
-
-
 steps:
   - type: Command
     name: "Prueba"
@@ -22,6 +11,6 @@ steps:
       python --version
       
 outputArtifacts:
-  - name: valvospain
+  - name: ${IMAGEN_EDITADA}
     type: BINARY
-    location: todos_logos/valvospain.png
+    location: todos_logos/${IMAGEN_EDITADA}.png
