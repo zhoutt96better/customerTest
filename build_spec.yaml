@@ -12,21 +12,15 @@ env:
   # For this Build to run, the Build Pipeline needs to have a BUILDRUN_HASH parameter set
   exportedVariables:
     - IMAGEN_EDITADA
+    - TAG
+    - BUILDRUN_HASH
 
 # Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
 # More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
 
     
 steps:
-  - type: Command
-    name: "Prueba"
-    command: |
-      echo "la version de python es:"
-      python --version
-      echo "el trigger event"
-      echo ${OCI_TRIGGER_EVENT_TYPE}
-      
-  - type: Command
+   - type: Command
     name: "Init exportedVariables"
     command: |
       IMAGEN_EDITADA=$imagen_editada
@@ -37,9 +31,10 @@ steps:
     name: "Define Image Tag - Commit ID"
     timeoutInSeconds: 30
     command: |
-      COMMIT_ID=`echo ${OCI_TRIGGER_COMMIT_HASH} | cut -c 1-7`
-      BUILDRUN_HASH=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
+      COMMIT_ID=echo ${OCI_TRIGGER_COMMIT_HASH} | cut -c 1-7
+      BUILDRUN_HASH=echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7
       [ -z "$COMMIT_ID" ] && TAG=$BUILDRUN_HASH || TAG=$COMMIT_ID
+      echo $TAG
       
    - type: Command
     name: "Init exportedVariables"
