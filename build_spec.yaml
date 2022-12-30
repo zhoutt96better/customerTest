@@ -20,12 +20,7 @@ steps:
      command: |
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}
-      echo "cuando hago ls"
-      ls -al todos_logos/*
-      echo "encuentra la ultima foto:"
-      ls todos_logos/* -Artls | tail -1
-      git tag
-      ${IMAGEN_EDITADA}=ls sample_directory/ -Artls | tail -1
+      ${IMAGEN_EDITADA}=git tag --sort=committerdate
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
