@@ -27,11 +27,8 @@ steps:
      timeoutInSeconds: 30
      command: |
       echo " el trigger commit hash"
-      echo ${OCI_PRIMARY_SOURCE_COMMIT_HASH} | cut -c 1-7
-      COMMIT_ID=echo ${OCI_TRIGGER_COMMIT_HASH} | cut -c 1-7
-      BUILDRUN_HASH=echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7
-      echo $BUILDRUN_HASH
-      [ -z "$COMMIT_ID" ] && TAG=$BUILDRUN_HASH || TAG=$COMMIT_ID
+      echo ${OCI_TRIGGER_EVENT_TYPE}
+      
       echo $TAG
       
    - type: Command
