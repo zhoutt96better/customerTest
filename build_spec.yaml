@@ -20,7 +20,8 @@ steps:
      command: |
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}
-      ${IMAGEN_EDITADA}=git tag --sort=committerdate
+      git tag --sort=committerdate
+      ${IMAGEN_EDITADA}=echo "git tag --sort=committerdate"
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
