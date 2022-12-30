@@ -4,14 +4,10 @@ timeoutInSeconds: 1000
 shell: bash           
 
 env:
-  # these are local variables to the build config
-  variables:
-    imagen_editada: "arin"
-    
+ 
   # exportedVariables are made available to use as parameters in sucessor Build Pipeline stages
   # For this Build to run, the Build Pipeline needs to have a BUILDRUN_HASH parameter set
   exportedVariables:
-    - IMAGEN_EDITADA
     - TAG
     - BUILDRUN_HASH
 
@@ -23,9 +19,8 @@ steps:
    - type: Command
      name: "Init exportedVariables"
      command: |
-      IMAGEN_EDITADA=$imagen_editada
       echo "la variable imagen_editada tiene el valor:"
-      echo $IMAGEN_EDITADA
+      echo ${IMAGEN_EDITADA}
       
    - type: Command
      name: "Define Image Tag - Commit ID"
@@ -39,4 +34,4 @@ steps:
    - type: Command
      name: "Init exportedVariables"
      command: |
-      oci devops deploy-artifact create-generic-artifact --argument-substitution-mode NONE --artifact-path .\todos_logos\albacora.png --artifact-type GENERIC_FILE --artifact-version 0.2 --project-id ocid1.devopsproject.oc1.eu-frankfurt-1.amaaaaaagmaryayaxj5e5675s2vcp6qqo7ndpcuupe56y6r5t3s3gx3qwccq --repository-id ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryaya33ygtslaxjbnvwrrql5azrkozka5sb4fzvpynjirf5ua --display-name $imagen_editada
+      oci devops deploy-artifact create-generic-artifact --argument-substitution-mode NONE --artifact-path .\todos_logos\$IMAGEN_EDITADA.png --artifact-type GENERIC_FILE --artifact-version 0.2 --project-id ocid1.devopsproject.oc1.eu-frankfurt-1.amaaaaaagmaryayaxj5e5675s2vcp6qqo7ndpcuupe56y6r5t3s3gx3qwccq --repository-id ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryaya33ygtslaxjbnvwrrql5azrkozka5sb4fzvpynjirf5ua --display-name ${IMAGEN_EDITADA}
