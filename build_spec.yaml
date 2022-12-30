@@ -22,6 +22,7 @@ steps:
       echo ${IMAGEN_EDITADA}
       echo "cuando hago ls"
       ls todos_logos/*
+      find todos_logos/* -type f -printf '%T@ %p\n' | sort -k1,1nr | head -1
       ${IMAGEN_EDITADA}= find todos_logos/* -type f -printf '%T@ %p\n' | sort -k1,1nr | head -1
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
