@@ -13,15 +13,17 @@ env:
 # Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
 # More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
 
-    
+   
+   
+#//tag= $(git tag --sort=committerdate)
+      #echo $tag
 steps:
    - type: Command
      name: "Init exportedVariables"
      command: |
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}
-      //tag= $(git tag --sort=committerdate)
-      //echo $tag
+      
       git tag
       ${IMAGEN_EDITADA}=$tag
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
