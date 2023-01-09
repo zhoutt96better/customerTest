@@ -24,7 +24,7 @@ steps:
       #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
       for file in $files
       do
-      
+        echo $file
         if [[ $file == *"todos_logos"* ]]; then
           foto= basename $file
           echo "guardar la variable foto en la IMAGEN_EDITADA"
