@@ -22,13 +22,14 @@ steps:
       echo  ${OCI_PRIMARY_SOURCE_COMMIT_HASH}
       files=(git diff-tree --no-commit-id --name-only -r ${OCI_PRIMARY_SOURCE_COMMIT_HASH})
       #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
-      foreach (file in $files){
+      for file in $files
+      do
         if($file -clike '*todos_logos*') {
           foto= basename $file
           #guardar la variable foto en la IMAGEN_EDITADA
           IMAGEN_EDITADA=$foto
         }
-      }
+      done
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
