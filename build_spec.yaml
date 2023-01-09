@@ -13,20 +13,21 @@ env:
 # Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
 # More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
 
-   
-   
-#//tag= $(git tag --sort=committerdate)
-      #echo $tag
-      # ${IMAGEN_EDITADA}=$tag
 steps:
    - type: Command
      name: "Init exportedVariables"
      command: |
       echo "la variable imagen_editada tiene el valor:"
-      echo ${IMAGEN_EDITADA}
-      nombretag= $(git tag)
-      echo "el tag es:"
-      echo "$nombretag"
+      echo ${IMAGEN_EDITADA}     
+      $files=(git diff-tree --no-commit-id --name-only -r ${OCI_PRIMARY_SOURCE_COMMIT_HASH})
+      #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
+      foreach ($file in $files){
+        if($file -clike '*zones*') {
+          $foto= basename $file
+          #guardar la variable foto en la IMAGEN_EDITADA
+          IMAGEN_EDITADA=$foto
+        }
+      }
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
