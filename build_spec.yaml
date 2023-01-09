@@ -23,12 +23,13 @@ steps:
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}
       $tag= echo "git tag --sort=committerdate"
+      echo $tag
       ${IMAGEN_EDITADA}=$tag
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
    - type: Command
-     name: "Init exportedVariables"
+     name: "Subir artefacto"
      command: |
       oci devops deploy-artifact create-generic-artifact --argument-substitution-mode NONE --artifact-path todos_logos/${IMAGEN_EDITADA}.png --artifact-type GENERIC_FILE --artifact-version 0.2 --project-id ocid1.devopsproject.oc1.eu-frankfurt-1.amaaaaaagmaryayaxj5e5675s2vcp6qqo7ndpcuupe56y6r5t3s3gx3qwccq --repository-id ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryaya33ygtslaxjbnvwrrql5azrkozka5sb4fzvpynjirf5ua --display-name ${IMAGEN_EDITADA}
 
