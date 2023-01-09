@@ -24,11 +24,14 @@ steps:
       #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
       for file in $files
       do
+        echo "entra en el loop"
         echo $file
         if [[ $file == *"todos_logos"* ]]; then
+          echo " entra en el if"
           foto= basename -s.png $file
           echo "guardar la variable foto en la IMAGEN_EDITADA"
-          echo " la variable foto: "$foto
+          echo " la variable foto: "
+          echo $foto
           IMAGEN_EDITADA=$foto
         fi    
       done
