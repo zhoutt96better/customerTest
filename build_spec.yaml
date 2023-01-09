@@ -20,7 +20,8 @@ steps:
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}     
       echo  ${OCI_PRIMARY_SOURCE_COMMIT_HASH}
-      files=(git diff-tree --no-commit-id --name-only -r ${OCI_PRIMARY_SOURCE_COMMIT_HASH})
+      git diff-tree --no-commit-id --name-only -r ${OCI_PRIMARY_SOURCE_COMMIT_HASH}
+      files=$(git diff-tree --no-commit-id --name-only -r ${OCI_PRIMARY_SOURCE_COMMIT_HASH})
       #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
       for file in $files
       do
