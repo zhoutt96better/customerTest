@@ -17,15 +17,14 @@ env:
    
 #//tag= $(git tag --sort=committerdate)
       #echo $tag
+      # ${IMAGEN_EDITADA}=$tag
 steps:
    - type: Command
      name: "Init exportedVariables"
      command: |
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}
-      
       git tag
-      ${IMAGEN_EDITADA}=$tag
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
