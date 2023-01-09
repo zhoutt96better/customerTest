@@ -24,11 +24,13 @@ steps:
       #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
       for file in $files
       do
-        if($file -clike '*todos_logos*') {
+      
+        if [[ $file == *"todos_logos"* ]]; then
           foto= basename $file
           #guardar la variable foto en la IMAGEN_EDITADA
           IMAGEN_EDITADA=$foto
-        }
+        fi
+    
       done
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
