@@ -26,7 +26,7 @@ steps:
       echo ${IMAGEN_EDITADA}
       nombretag= $(git tag)
       echo "el tag es:"
-      echo $nombretag
+      echo "$nombretag"
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
       echo ${IMAGEN_EDITADA}
       
