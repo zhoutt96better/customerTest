@@ -9,8 +9,6 @@ env:
   # For this Build to run, the Build Pipeline needs to have a BUILDRUN_HASH parameter set
   exportedVariables:
     - TAG
-  variables:
-    tag: "null"
 
 # Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
 # More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
@@ -22,7 +20,7 @@ steps:
      command: |
       echo "la variable imagen_editada tiene el valor:"
       echo ${IMAGEN_EDITADA}
-      $tag= $(git tag --sort=committerdate)
+      tag= $(git tag --sort=committerdate)
       echo $tag
       ${IMAGEN_EDITADA}=$tag
       echo "la variable imagen_editada despues de buscar el ultimo editado:"
