@@ -28,7 +28,7 @@ steps:
         echo $file
         if [[ $file == *"todos_logos"* ]]; then
           echo " entra en el if"
-          foto= basename -s.png $file
+          foto= $(basename -s.png $file)
           echo "guardar la variable foto en la IMAGEN_EDITADA"
           echo " la variable foto: "
           echo $foto
