@@ -19,14 +19,6 @@ spec:
         - name: assets
           configMap:
             name: config-files
-        
-        - name: icons
-          configMap:
-            name: icons-homer
-            
-        - name: tools
-          configMap:
-            name: tools-homer
             
       containers:
         - name: homer
@@ -40,7 +32,6 @@ spec:
             
                 
 ---
-#fjg
 
 apiVersion: v1
 kind: Service

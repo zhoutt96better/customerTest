@@ -17,26 +17,15 @@ steps:
    - type: Command
      name: "Conseguir logo actualizado"
      command: |
-      echo "la variable imagen_editada tiene el valor:"
-      echo ${IMAGEN_EDITADA}     
-      echo  ${OCI_PRIMARY_SOURCE_COMMIT_HASH}
       files=$(git diff-tree --no-commit-id --name-only -r ${OCI_PRIMARY_SOURCE_COMMIT_HASH})
       #recorreremos estos archivos modificados, y en caso de que pertenezcan a la carpeta zones guardamos su nombre.
       for file in $files
       do
-        echo "entra en el loop"
-        echo $file
         if [[ $file == *"todos_logos"* ]]; then
-          echo " entra en el if"
           foto=$(basename -s.png $file)
-          echo "guardar la variable foto en la IMAGEN_EDITADA"
-          echo " la variable foto: "
-          echo $foto
           IMAGEN_EDITADA=$foto
         fi    
       done
-      echo "la variable imagen_editada despues de buscar el ultimo editado:"
-      echo ${IMAGEN_EDITADA}
       
    - type: Command
      name: "Subir artefacto"
