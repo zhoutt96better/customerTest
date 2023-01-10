@@ -13,7 +13,14 @@ env:
 # Its a native way to fetch artifacts from external or artifact repo or a file path to use before a stage.
 # More about buildspec formats - https://docs.oracle.com/en-us/iaas/Content/devops/using/build_specs.htm
 
+
+
 steps:
+  - type: Command
+     name: "Crear el configmap"
+     command: |
+      kubectl create configmap --from-file assets/*
+      
    - type: Command
      name: "Conseguir logo actualizado"
      command: |
