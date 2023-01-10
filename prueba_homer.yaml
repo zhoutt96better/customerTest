@@ -63,4 +63,18 @@ metadata:
   name: config-files
   namespace: default
 data: 
-  assets/*
+  assets: |
+    additional-page.yml.dist=additional-page.yml.dist
+    additionnal-page.yml.dist=additionnal-page.yml.dist
+    config.yml=config.yml
+    config.yml.dist=config.yml.dist
+    config.yml.dist.sample-sui=config.yml.dist.sample-sui
+    config.yml.old=config.yml.old
+    custom.css=custom.css
+    custom.css.sample=custom.css.sample
+    cx.yml=cx.yml
+    erp.yml=erp.yml
+    ebs.yml=ebs.yml
+    jde.yml=jde.yml
+    manifest.json
+    
