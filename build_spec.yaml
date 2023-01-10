@@ -16,9 +16,10 @@ env:
 
 
 steps:
+
   - type: Command
-     name: "Crear el configmap"
-     command: |
+    name: "Crear el configmap"
+    command: |
       kubectl create configmap --from-file assets/*
       
    - type: Command
