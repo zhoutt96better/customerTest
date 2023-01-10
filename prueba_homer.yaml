@@ -55,3 +55,12 @@ spec:
     
 
   
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: config-files
+  namespace: default
+data: 
+  assets/*
