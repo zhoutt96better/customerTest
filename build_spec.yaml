@@ -40,4 +40,4 @@ steps:
 outputArtifacts:
   - name: homer
     type: BINARY
-    location: ${OCI_PRIMARY_SOURCE_DIR}/prueba_homer.yaml
+    location: prueba_homer.yaml
