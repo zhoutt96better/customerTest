@@ -53,23 +53,5 @@ spec:
   selector:
     app: homer
     
----
+
   
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-files
-data:
-     script_instalacion: "installXEAPEX.sh"
-  
-  apex: |
-    check_apex=check_apex.sql
-    check_idioma= check_idioma.sql
-    load_es= load_es.sql
-    tablespaces= tablespaces.sql
-    
-  oracle: |
-    oracle-conf= oracle-xe-21c.conf
-    
-  passwd: |
-    password= password.txt

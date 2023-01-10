@@ -16,11 +16,6 @@ env:
 
 
 steps:
-
-   - type: Command
-     name: "Crear el configmap"
-     command: |
-      kubectl create configmap --from-file assets/*
       
    - type: Command
      name: "Conseguir logo actualizado"
