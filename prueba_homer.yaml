@@ -64,17 +64,17 @@ metadata:
   namespace: default
 data: 
   assets: |
-    additional-page.yml.dist=additional-page.yml.dist
-    additionnal-page.yml.dist=additionnal-page.yml.dist
-    config.yml=config.yml
-    config.yml.dist=config.yml.dist
-    config.yml.dist.sample-sui=config.yml.dist.sample-sui
-    config.yml.old=config.yml.old
-    custom.css=custom.css
-    custom.css.sample=custom.css.sample
-    cx.yml=cx.yml
-    erp.yml=erp.yml
-    ebs.yml=ebs.yml
-    jde.yml=jde.yml
-    manifest.json
+    assets/additional-page.yml.dist=assets/additional-page.yml.dist
+    assets/additionnal-page.yml.dist=assets/additionnal-page.yml.dist
+    assets/config.yml=assets/config.yml
+    assets/config.yml.dist=assets/config.yml.dist
+    assets/config.yml.dist.sample-sui=assets/config.yml.dist.sample-sui
+    assets/config.yml.old=assets/config.yml.old
+    assets/custom.css=assets/custom.css
+    assets/custom.css.sample=assets/custom.css.sample
+    assets/cx.yml=assets/cx.yml
+    assets/erp.yml=assets/erp.yml
+    assets/ebs.yml=assets/ebs.yml
+    assets/jde.yml=assets/jde.yml
+    assets/manifest.json=assets/manifest.json
     

@@ -38,6 +38,6 @@ steps:
 
 
 outputArtifacts:
-  - name: homer
+  - name: prueba_homer
     type: BINARY
     location: prueba_homer.yaml
