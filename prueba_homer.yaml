@@ -55,26 +55,3 @@ spec:
     
 
   
----
-
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: config-files
-  namespace: default
-data: 
-  assets: |
-    assets/additional-page.yml.dist=assets/additional-page.yml.dist
-    assets/additionnal-page.yml.dist=assets/additionnal-page.yml.dist
-    assets/config.yml=assets/config.yml
-    assets/config.yml.dist=assets/config.yml.dist
-    assets/config.yml.dist.sample-sui=assets/config.yml.dist.sample-sui
-    assets/config.yml.old=assets/config.yml.old
-    assets/custom.css=assets/custom.css
-    assets/custom.css.sample=assets/custom.css.sample
-    assets/cx.yml=assets/cx.yml
-    assets/erp.yml=assets/erp.yml
-    assets/ebs.yml=assets/ebs.yml
-    assets/jde.yml=assets/jde.yml
-    assets/manifest.json=assets/manifest.json
-    
