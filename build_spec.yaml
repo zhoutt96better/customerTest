@@ -31,13 +31,13 @@ steps:
       done
       
    - type: Command
-     name: "Subir artefacto"
+     name: "Subir artefacto (imagen editada)"
      command: |
       oci devops deploy-artifact create-generic-artifact --argument-substitution-mode NONE --artifact-path todos_logos/${IMAGEN_EDITADA}.png --artifact-type GENERIC_FILE --artifact-version 0.2 --project-id ocid1.devopsproject.oc1.eu-frankfurt-1.amaaaaaagmaryayaxj5e5675s2vcp6qqo7ndpcuupe56y6r5t3s3gx3qwccq --repository-id ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryaya33ygtslaxjbnvwrrql5azrkozka5sb4fzvpynjirf5ua --display-name ${IMAGEN_EDITADA}
+      
+   - type: Command
+     name: "Subir manifiesto"
+     command: |
+      oci devops deploy-artifact create-generic-artifact --argument-substitution-mode NONE --artifact-path prueba_homer.yaml --artifact-type KUBERNETES_MANIFEST --artifact-version 0.2 --project-id ocid1.devopsproject.oc1.eu-frankfurt-1.amaaaaaagmaryayaxj5e5675s2vcp6qqo7ndpcuupe56y6r5t3s3gx3qwccq --repository-id ocid1.artifactrepository.oc1.eu-frankfurt-1.0.amaaaaaagmaryayaj5k4mwtnem44btpxbk5ytfcohdldxnrcb7yehjmhbxnq --display-name prueba_homer
 
 
-
-outputArtifacts:
-  - name: prueba_homer
-    type: BINARY
-    location: prueba_homer.yaml
