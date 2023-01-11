@@ -41,7 +41,7 @@ metadata:
   name: homer-svc
   annotations:
     service.beta.kubernetes.io/oci-load-balancer-internal: "true"
-    service.beta.kubernetes.io/oci-load-balancer-security-list-management-mode: "None"
+    
     oci.oraclecloud.com/oci-network-security-groups: "ocid1.networksecuritygroup.oc1.eu-frankfurt-1.aaaaaaaazurwvqqzrfup6io6zjagoi7ge37gpzvtprd7omwvrarardtcforq"
     service.beta.kubernetes.io/oci-load-balancer-subnet1: "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaa6hy2orsocqd42thmgc2yjq2o2g6i5q5xfsakstf65mm66gw5p43q"
 spec:
