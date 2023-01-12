@@ -28,6 +28,7 @@ spec:
           volumeMounts:
           - name: assets
             mountPath: "/www/assets"
+            subPath: "assets"
             readOnly: true
             
                 
