@@ -28,7 +28,7 @@ steps:
    - type: Command
      name: "Crear configmap y redirigir salida a fichero"
      command: |
-      kubectl create configmap config-files --from-files=.\assets\ --dry-run='client' -o yaml > configmap.yaml
+      kubectl create configmap config-files --from-file=.\assets\ --dry-run='client' -o yaml > configmap.yaml
     
    - type: Command
      name: "Subir artefacto (configmap)"
